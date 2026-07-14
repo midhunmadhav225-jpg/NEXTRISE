@@ -9,10 +9,13 @@ const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 camera.position.z = 5;
 
+let mouseX = 0;
+document.addEventListener('mousemove', (e) => { mouseX = (e.clientX / window.innerWidth) * 2 - 1; });
+
 function animate() {
     requestAnimationFrame(animate);
     torus.rotation.x += 0.01;
-    torus.rotation.y += 0.005;
+    torus.rotation.y += 0.005 + (mouseX * 0.02);
     renderer.render(scene, camera);
 }
 animate();
