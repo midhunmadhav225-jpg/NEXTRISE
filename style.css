@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap');
 body { margin: 0; background: #0a0a0a; color: #f4f4f4; font-family: 'Inter', sans-serif; overflow: hidden; }
 #hero-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 nav { display: flex; justify-content: space-between; padding: 2rem 5%; font-weight: 700; color: #d4af37; letter-spacing: 2px; }
