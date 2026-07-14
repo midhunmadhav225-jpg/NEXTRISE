@@ -1,0 +1,20 @@
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
+const material = new THREE.MeshBasicMaterial({ color: 0xd4af37, wireframe: true });
+const torus = new THREE.Mesh(geometry, material);
+scene.add(torus);
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    torus.rotation.x += 0.01;
+    torus.rotation.y += 0.005;
+    renderer.render(scene, camera);
+}
+animate();
+
+gsap.from(".reveal", { opacity: 0, y: 50, duration: 2, ease: "power4.out" });
